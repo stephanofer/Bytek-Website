@@ -1,37 +1,28 @@
 ---
-import '../styles/global.css'
-import Navbar from "../components/Navbar.astro"
-import Hero from "../components/Hero.astro"
-import Clients from "../components/Clients.astro"
-import ChooseUs from "../components/ChooseUs.astro"
-import CaseStudies from '../components/CaseStudies.astro'
-import Team from '../components/Team.astro'
-import Testimonials from '../components/Testimonials.astro'
-import FAQ from '../components/FAQ.astro'
-import News from '../components/News.astro'
-import Newsletter from '../components/Newsletter.astro'
-import Footer from '../components/Footer.astro'
+import Navbar from "../components/navbar.astro";
+import Hero from "../components/hero.astro";
+import Clients from "../components/clients.astro";
+import ChooseUs from "../components/chooseUs.astro";
+import CaseStudies from "../components/CaseStudies.astro";
+import Team from "../components/Team.astro";
+import Testimonials from "../components/Testimonials.astro";
+import FAQ from "../components/FAQ.astro";
+import News from "../components/News.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<Navbar />
-		<Hero />
-		<Clients />
-		<ChooseUs />
-		<CaseStudies />
-		<Team />
-		<Testimonials />
-		<FAQ />
-		<News />
-		<Newsletter />
-		<Footer />
-	</body>
-</html>
+<BaseLayout>
+  <Navbar />
+  <Hero />
+  <Clients />
+  <ChooseUs />
+  <CaseStudies />
+  <Team />
+  <Testimonials />
+  <FAQ />
+  <News />
+  <Newsletter />
+  <Footer />
+</BaseLayout>
