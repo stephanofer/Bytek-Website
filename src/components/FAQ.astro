@@ -83,7 +83,7 @@ const faqs = [
           </div>
           
           <div 
-            class={`transition-all duration-500 ease-out ${index === 0 ? 'max-h-96 opacity-100 mb-8' : 'max-h-0 opacity-0'}`}
+            class={`transition-all duration-500 ease-out  overflow-hidden ${index === 0 ? 'max-h-96 opacity-100 mb-8' : 'max-h-0 opacity-0'}`}
             data-faq-content
           >
             <div class="flex justify-end pr-8">
@@ -113,12 +113,13 @@ const faqs = [
       const button = item.querySelector('[data-faq-button]');
       const content = item.querySelector('[data-faq-content]');
       const icon = item.querySelector('[data-faq-icon]');
+      const iconContainer = button?.querySelector('div');
+
       
       button?.addEventListener('click', () => {
         const isOpen = content?.classList.contains('max-h-96');
         
-        faqItems.forEach((otherItem, otherIndex) => {
-            if (otherIndex !== itemIndex) {
+        faqItems.forEach((otherItem) => {
                 const otherButton = otherItem.querySelector('[data-faq-button]');
                 const otherContent = otherItem.querySelector('[data-faq-content]');
                 const otherIcon = otherItem.querySelector('[data-faq-icon]');
@@ -126,21 +127,24 @@ const faqs = [
 
                 otherContent?.classList.remove('max-h-96', 'opacity-100', 'mb-8');
                 otherContent?.classList.add('max-h-0', 'opacity-0');
+
                 otherIcon?.classList.remove('rotate-45');
+
                 otherButton?.classList.remove('bg-slate-800', 'hover:bg-slate-700');
                 otherButton?.classList.add('bg-slate-400', 'hover:bg-slate-500');
+
+
                 otherIconContainer?.classList.remove('bg-slate-600');
                 otherIconContainer?.classList.add('bg-slate-300');
-            }
             });
 
 
         if (!isOpen) {
           content?.classList.remove('max-h-0', 'opacity-0');
           content?.classList.add('max-h-96', 'opacity-100', 'mb-8');
+
           icon?.classList.add('rotate-45');
 
-          const iconContainer = button?.querySelector('div');
           button?.classList.remove('bg-slate-400', 'hover:bg-slate-500');
           button?.classList.add('bg-slate-800', 'hover:bg-slate-700');
           iconContainer?.classList.remove('bg-slate-300');
