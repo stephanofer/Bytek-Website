@@ -1,25 +1,55 @@
 ---
-import '../styles/global.css'
+import "../styles/global.css";
+import { SEO } from "astro-seo";
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SEO
+      title="Bytek"
+      description="Bytek"
+      canonical={""}
+      extend={{
+        meta: [
+          { name: "keywords", content: "asd" },
+          { name: "author", content: "" },
+          { name: "twitter:card", content: "summary_large_image" },
+          { name: "twitter:site", content: "" },
+          { name: "twitter:creator", content: "@asd" },
+          { name: "twitter:title", content: "asd" },
+          { name: "twitter:description", content: "asd" },
+          {
+            name: "twitter:image",
+            content:
+              "asd",
+          },
+        ],
+      }}
+      openGraph={{
+        basic: {
+          title: "asd",
+          type: "website",
+          image:
+            "asd",
+          url: "asd",
+        },
+      }}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
