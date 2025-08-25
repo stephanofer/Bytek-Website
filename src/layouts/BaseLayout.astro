@@ -1,6 +1,10 @@
 ---
-import '../styles/global.css'
+import "@/styles/global.css";
+
+import Footer from "@/components/Layout/Footer.astro";
+import Header from "@/components/Layout/Header.astro";
 ---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -11,7 +15,11 @@ import '../styles/global.css'
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<slot />
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>
 
