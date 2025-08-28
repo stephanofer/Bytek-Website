@@ -1,24 +1,44 @@
 ---
-import CaseStudies from "@/components/Home/CaseStudies.astro";
-import ChooseUs from "@/components/Home/ChooseUs.astro";
-import Clients from "@/components/Home/Clients.astro";
-import FAQ from "@/components/Home/FAQ.astro";
-import Hero from "@/components/Home/Hero.astro";
-import News from "@/components/Home/News.astro";
-import Newsletter from "@/components/Home/Newsletter.astro";
-import Team from "@/components/Home/Team.astro";
-import Testimonials from "@/components/Home/Testimonials.astro";
+import CaseStudies from "@/components/home/CaseStudies.astro";
+import ChooseUs from "@/components/home/ChooseUs.astro";
+import Clients from "@/components/home/Clients.astro";
+import FAQ from "@/components/home/FAQ.astro";
+import Hero from "@/components/home/Hero.astro";
+import News from "@/components/home/News.astro";
+import Newsletter from "@/components/home/Newsletter.astro";
+import Team from "@/components/home/Team.astro";
+import Testimonials from "@/components/home/Testimonials.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import SectionContainer from "@/components/common/SectionContainer.astro";
 ---
 
 <BaseLayout>
-	<Hero />
-	<Clients />
-	<ChooseUs />
-	<CaseStudies />
-	<Team />
-	<Testimonials />
-	<FAQ />
-	<News />
-	<Newsletter />
+	<SectionContainer SectionName="Hero">
+		<Hero />
+	</SectionContainer>
+	<SectionContainer SectionName="Clients">
+		<Clients />
+	</SectionContainer>
+	<SectionContainer SectionName="ChooseUs">
+		<ChooseUs />
+	</SectionContainer>
+	<SectionContainer SectionName="CaseStudies">
+		<CaseStudies />
+	</SectionContainer>
+	<SectionContainer SectionName="Team">
+		<Team />
+	</SectionContainer>
+	<SectionContainer SectionName="Testimonials">
+		<Testimonials />
+	</SectionContainer>
+	<SectionContainer SectionName="FAQ">
+		<FAQ />
+	</SectionContainer>
+	<SectionContainer SectionName="News">
+		<News />
+	</SectionContainer>
+	<SectionContainer SectionName="Newsletter">
+		<Newsletter />
+	</SectionContainer>
 </BaseLayout>
