@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+@theme {
+    --font-fallback:
+      system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI',
+      'Noto Sans', helvetica, arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    --font-primary: 'Clash';
+}
+
+
+@layer base {
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+      overscroll-behavior: none;
+      overscroll-behavior-y: none;
+    }
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal; 
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/fonts/Inter.woff2") format("woff2");
+}
+  
+@font-face {
+    font-family: "Clash";
+    font-style: normal;
+    font-weight: 200 700;
+    font-display: swap;
+    src: url("/fonts/Clash.woff2") format("woff2");
+}
+
+
+html {
+    font-family: 'Inter', var(--font-fallback);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
