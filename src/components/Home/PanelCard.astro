@@ -1,0 +1,23 @@
+---
+const { title, text, image, isActive = false } = Astro.props;
+---
+
+<div
+  class={`panel ${isActive ? "flex-[2]" : "flex-1"} h-[50vh] text-white cursor-pointer relative transition-all duration-700 ease-in flex justify-center items-center bg-cover bg-center`}
+  style={`background-image: url(${image})`}
+>
+  <h3
+    class={`absolute top-10 text-2xl transition-opacity duration-500 ${
+      isActive ? "opacity-100" : "opacity-0"
+    }`}
+  >
+    {title}
+  </h3>
+  <p
+    class={`absolute bottom-5 left-10 text-base transition-opacity duration-500 ${
+      isActive ? "opacity-100 delay-200" : "opacity-0"
+    }`}
+  >
+    {text}
+  </p>
+</div>
