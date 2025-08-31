@@ -1,23 +1,26 @@
 ---
-const { title, text, image, isActive = false } = Astro.props;
+const { title, text, image, score } = Astro.props;
 ---
 
 <div
-  class={`panel ${isActive ? "flex-[2]" : "flex-1"} h-[50vh] text-white cursor-pointer relative transition-all duration-700 ease-in flex justify-center items-center bg-cover bg-center`}
+  class="panel flex-1 h-[50vh] text-white relative flex justify-center items-center bg-cover bg-center cursor-pointer transition-all duration-300 ease-in hover:flex-[2]"
   style={`background-image: url(${image})`}
 >
   <h3
-    class={`absolute top-10 text-2xl transition-opacity duration-500 ${
-      isActive ? "opacity-100" : "opacity-0"
-    }`}
+    class="absolute top-10 text-xl font-bold transition-opacity duration-500 hover:opacity-100"
   >
     {title}
   </h3>
+
   <p
-    class={`absolute bottom-5 left-10 text-base transition-opacity duration-500 ${
-      isActive ? "opacity-100 delay-200" : "opacity-0"
-    }`}
+    class="absolute bottom-5 text-base transition-opacity duration-500 delay-200 hover:opacity-100 text-center"
   >
+    <span
+      class="text-3xl font-bold transition-opacity duration-500 hover:opacity-100"
+    >
+      {score}
+    </span>
+    <br />
     {text}
   </p>
 </div>

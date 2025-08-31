@@ -4,36 +4,44 @@ import PanelCard from "@/components/home/PanelCard.astro";
 const panels = [
   {
     title: "Explore the world",
-    text: "Parrafo Winter",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     image:
       "https://images.unsplash.com/photo-1558979158-65a1eaa08691?auto=format&fit=crop&w=1350&q=80",
+    score: "3x",
   },
   {
     title: "Wild Forest",
-    text: "Parrafo Winter",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     image:
-      "https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1558979158-65a1eaa08691?auto=format&fit=crop&w=1350&q=80",
+    score: "100%",
   },
   {
     title: "Sunny Beach",
-    text: "Parrafo Winter",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     image:
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1353&q=80",
+    score: "3x",
   },
   {
     title: "City on Winter",
-    text: "Parrafo Winter",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     image:
       "https://images.unsplash.com/photo-1551009175-8a68da93d5f9?auto=format&fit=crop&w=1351&q=80",
+    score: "40%",
   },
 ];
 ---
 
 <div class="w-full bg-white py-16">
   <div class="max-w-7xl mx-auto px-6 text-center lg:text-left">
-    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12">
+    <div
+      class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12"
+    >
       <div class="w-full lg:w-1/2">
-        <p class="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-2">
+        <p
+          class="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-2"
+        >
           Lorem ipsum dolor sit amet
         </p>
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
@@ -42,41 +50,23 @@ const panels = [
       </div>
       <div class="w-full lg:w-1/2 mt-6 lg:mt-0 lg:pl-16">
         <p class="text-gray-600">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
     </div>
 
     <div class="flex w-full">
-      {panels.map((panel) => (
-        <PanelCard title={panel.title} text={panel.text} image={panel.image} />
-      ))}
+      {
+        panels.map((panel) => (
+          <PanelCard
+            title={panel.title}
+            text={panel.text}
+            image={panel.image}
+            score={panel.score}
+          />
+        ))
+      }
     </div>
   </div>
 </div>
-<script>
-  const panels = document.querySelectorAll(".panel");
-
-  panels.forEach((panel) => {
-    panel.addEventListener("click", () => {
-      if (panel.classList.contains("flex-[2]")) {
-        panel.classList.remove("flex-[2]");
-        panel.querySelector("h3")?.classList.remove("opacity-100");
-        panel.querySelector("p")?.classList.remove("opacity-100");
-      } else {
-        removeActiveClasses();
-        panel.classList.add("flex-[2]");
-        panel.querySelector("h3")?.classList.add("opacity-100");
-        panel.querySelector("p")?.classList.add("opacity-100");
-      }
-    });
-  });
-
-  const removeActiveClasses = () => {
-    panels.forEach((panel) => {
-      panel.classList.remove("flex-[2]");
-      panel.querySelector("h3")?.classList.remove("opacity-100");
-      panel.querySelector("p")?.classList.remove("opacity-100");
-    });
-  };
-</script>
