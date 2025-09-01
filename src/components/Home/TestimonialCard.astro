@@ -1,0 +1,31 @@
+---
+import Star from "@/assets/svg/Star.svg";
+
+const { stars = 5, text, author, role, image } = Astro.props;
+
+const starsArray = Array.from({ length: stars });
+---
+
+<div
+  class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center text-center h-full"
+>
+  <div class="flex space-x-1 text-red-500 mb-4">
+    {starsArray.map(() => <Star />)}
+  </div>
+
+  <p class="italic text-gray-700">
+    "{text}"
+  </p>
+
+  <div class="mt-auto pt-6 flex items-center justify-center">
+    <img
+      src={image}
+      alt={`Foto de ${author}`}
+      class="w-12 h-12 rounded-full object-cover mr-4"
+    />
+    <div class="text-left">
+      <h4 class="font-semibold text-gray-900">{author}</h4>
+      <p class="text-sm text-gray-500">{role}</p>
+    </div>
+  </div>
+</div>

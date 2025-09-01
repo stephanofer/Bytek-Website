@@ -1,10 +1,38 @@
 ---
+import TeamCard from "./TeamCard.astro";
+
+import Arrow from "@/assets/svg/Arrow.svg";
+
+const teamMembers = [
+  {
+    name: "Yin Coaquira",
+    position: "Front End Mega-Siñor Developer",
+    image: "/assets/madrid.png",
+  },
+  {
+    name: "Jhonatan Fernandez",
+    position: "Front End Ultra-Siñor Developer",
+    image: "/assets/madrid.png",
+  },
+  {
+    name: "Héctor Vega",
+    position: "Backend Junior Developer",
+    image: "/assets/madrid.png",
+  },
+  {
+    name: "Nayla Vasquez",
+    position: "Masajista de uno de los siñors",
+    image: "/assets/madrid.png",
+  },
+];
 ---
 
-<div class="w-full bg-yellow-100 py-16 relative">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
-      <div class="text-left">
+<section class="w-full py-16 relative">
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <header
+      class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12"
+    >
+      <div class="text-left md:flex-1">
         <p class="text-sm font-semibold text-red-500 uppercase tracking-widest">
           Conoce al equipo
         </p>
@@ -12,63 +40,30 @@
           Miembros del equipo con experiencia
         </h2>
       </div>
-      <a 
-        href="#" 
-        class="mt-6 md:mt-0 inline-flex items-center space-x-2 border-2 border-gray-900 text-gray-900 font-semibold px-6 py-3 rounded-full hover:bg-gray-900 hover:text-white transition"
-      >
-        <span>Conoce más</span>
-        <svg
-          class="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
+
+      <div class="shrink-0">
+        <a
+          href="#"
+          class="inline-flex items-center border-2 border-gray-900 text-gray-900 font-semibold px-6 py-3 rounded-full hover:bg-gray-900 hover:text-white transition gap-2"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 8l4 4m0 0l-4 4m4-4H3"
-          ></path>
-        </svg>
-      </a>
-    </div>
+          <span>Conoce más</span>
+          <Arrow />
+        </a>
+      </div>
+    </header>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="relative group">
-        <img src="/assets/madrid.png" alt="Team Member" class="w-full h-auto rounded-lg shadow-lg" />
-        <div class="mt-4 text-center">
-          <h3 class="text-xl font-semibold text-gray-900">Yin Coaquira</h3>
-          <p class="text-gray-600">Front End Mega-Siñor Developer</p>
-        </div>
-      </div>
-      
-      <div class="relative group">
-        <img src="/assets/madrid.png" alt="Team Member" class="w-full h-auto rounded-lg shadow-lg" />
-        <div class="mt-4 text-center">
-          <h3 class="text-xl font-semibold text-gray-900">Jhonatan Fernandez</h3>
-          <p class="text-gray-600">Front End Ultra-Siñor Developer</p>
-
-        </div>
-      </div>
-
-      <div class="relative group">
-        <img src="/assets/madrid.png" alt="Team Member" class="w-full h-auto rounded-lg shadow-lg" />
-        <div class="mt-4 text-center">
-          <h3 class="text-xl font-semibold text-gray-900">Héctor Vega</h3>
-          <p class="text-gray-600">Backend Junior Developer</p>
-        </div>
-      </div>
-
-      <div class="relative group">
-        <img src="/assets/madrid.png" alt="Team Member" class="w-full h-auto rounded-lg shadow-lg" />
-        <div class="mt-4 text-center">
-          <h3 class="text-xl font-semibold text-gray-900">Nayla Vasquez</h3>
-          <p class="text-gray-600">Masajista de uno de los siñors</p>
-        </div>
-      </div>
+      {
+        teamMembers.map((member) => (
+          <TeamCard
+            name={member.name}
+            position={member.position}
+            image={member.image}
+          />
+        ))
+      }
     </div>
   </div>
 
-  <div class="absolute inset-0 bg-yellow-200 opacity-50 -z-10"></div>
-</div>
+  <div class="absolute inset-0 bg-yellow-200 opacity-50"></div>
+</section>
