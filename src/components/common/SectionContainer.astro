@@ -1,7 +1,10 @@
 ---
-const { className, SectionName } = Astro.props;
+const { className, SectionName, fullWidth = false } = Astro.props;
 ---
 
-<section class={`container mx-auto px-4 lg:w-[1024px] ${className || ""}`} id={SectionName}>
+<section
+  class={`${className} ${fullWidth ? "w-full" : "container mx-auto px-4 lg:max-w-[1024px]"}`}
+  id={SectionName}
+>
   <slot />
 </section>
