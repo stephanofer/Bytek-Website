@@ -1,0 +1,59 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const title = "Página no encontrada - 404";
+const description = "La página que buscas no existe o ha sido movida.";
+---
+<BaseLayout title={description} description={description}>
+<main class="relative h-[calc(100vh-64px)] flex items-center">
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <div class="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gradient-to-tr from-gray-900 via-gray-600 to-gray-300 opacity-[0.08] blur-3xl animate-orb"></div>
+    <div class="absolute -bottom-20 -right-20 h-[28rem] w-[28rem] rounded-full bg-gradient-to-tr from-gray-300 via-gray-600 to-gray-900 opacity-[0.07] blur-3xl animate-orb-delayed"></div>
+    <div class="absolute inset-0 bg-grid-mask pointer-events-none"></div>
+  </div>
+
+  <section class="w-full">
+    <div class="max-w-6xl mx-auto px-6 py-16 sm:py-24">
+      <div class="flex flex-col items-start sm:items-center text-left sm:text-center gap-6">
+        <h1 class="text-6xl sm:text-7xl md:text-8xl font-extrabold leading-[0.95] tracking-[-0.03em]">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-700 to-gray-400">Página no encontrada</span>
+        </h1>
+
+        <p class="max-w-2xl text-base sm:text-lg md:text-xl text-gray-600">
+          La ruta que intentas visitar no existe. Puede que haya cambiado o quizá nunca
+          estuvo aquí. Volvamos al inicio y sigamos construyendo algo increíble.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+          <a href="/" class="inline-flex items-center justify-center rounded-md bg-gray-900 text-white px-5 py-3 text-sm sm:text-base font-medium shadow-sm hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-colors">
+            Volver al inicio
+          </a>
+          <a href="/pricing" class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white text-gray-900 px-5 py-3 text-sm sm:text-base font-medium hover:bg-gray-50 transition-colors">
+            Explorar servicios
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</BaseLayout>
+<style>
+  @keyframes orbFloat {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(10px, -8px, 0) scale(1.05); }
+    100% { transform: translate3d(0, 0, 0) scale(1); }
+  }
+  .animate-orb { animation: orbFloat 9s ease-in-out infinite; }
+  .animate-orb-delayed { animation: orbFloat 12s ease-in-out infinite; animation-delay: 0.8s; }
+
+  .bg-grid-mask {
+    --line: rgba(17, 24, 39, 0.05); 
+    background-image:
+      linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 24px 24px;
+    mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9), transparent 65%);
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9), transparent 65%);
+  }
+</style>
+
