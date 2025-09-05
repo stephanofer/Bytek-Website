@@ -9,40 +9,45 @@ import Newsletter from "@/components/home/Newsletter.astro";
 import Team from "@/components/home/Team.astro";
 import Testimonials from "@/components/home/Testimonials.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Services from "@/components/home/Services.astro";
 
 import SectionContainer from "@/components/common/SectionContainer.astro";
 
-const title = 'Bytek - Desarrollo de software (Inicio)'
-const description = 'Bytek desarrolladores de software '
-
+const title = "Bytek - Desarrollo de software (Inicio)";
+const description = "Bytek desarrolladores de software ";
 ---
 
 <BaseLayout title={title} description={description}>
-	<SectionContainer SectionName="Hero">
-		<Hero />
-	</SectionContainer>
-	<SectionContainer SectionName="Clients">
-		<Clients />
-	</SectionContainer>
-	<SectionContainer SectionName="ChooseUs">
-		<ChooseUs />
-	</SectionContainer>
-	<SectionContainer SectionName="CaseStudies">
-		<CaseStudies />
-	</SectionContainer>
-	<SectionContainer SectionName="Team">
-		<Team />
-	</SectionContainer>
-	<SectionContainer SectionName="Testimonials">
-		<Testimonials />
-	</SectionContainer>
-	<SectionContainer SectionName="FAQ">
-		<FAQ />
-	</SectionContainer>
-	<SectionContainer SectionName="News">
-		<News />
-	</SectionContainer>
-	<SectionContainer SectionName="Newsletter">
-		<Newsletter />
-	</SectionContainer>
+  <SectionContainer SectionName="Hero">
+    <Hero />
+  </SectionContainer>
+  <div class="w-full bg-[#BFD641]">
+    <SectionContainer SectionName="Clients">
+      <Clients />
+    </SectionContainer>
+  </div>
+  <SectionContainer SectionName="services">
+    <Services />
+  </SectionContainer>
+  <SectionContainer SectionName="CaseStudies">
+    <CaseStudies />
+  </SectionContainer>
+  <SectionContainer SectionName="Team">
+    <Team />
+  </SectionContainer>
+  <SectionContainer SectionName="Testimonials">
+    <Testimonials />
+  </SectionContainer>
+  <SectionContainer SectionName="FAQ">
+    <FAQ />
+  </SectionContainer>
+  <SectionContainer SectionName="ChooseUs">
+    <ChooseUs />
+  </SectionContainer>
+  <!-- <SectionContainer SectionName="News">
+    <News />
+  </SectionContainer> -->
+  <SectionContainer SectionName="Newsletter">
+    <Newsletter />
+  </SectionContainer>
 </BaseLayout>

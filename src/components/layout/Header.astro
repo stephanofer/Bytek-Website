@@ -1,5 +1,7 @@
 ---
 import Link from "@/components/layout/Link.astro";
+import Button from "@/components/home/Button.astro";
+import Arrow from "@/assets/svg/Arrow.svg";
 ---
 
 <header class="w-full">
@@ -8,11 +10,19 @@ import Link from "@/components/layout/Link.astro";
       BYTEK
     </div>
     <nav class="flex items-center space-x-2 sm:space-x-8">
-      <Link title="Servicios" link="/"/>
-      <Link title="Precios" link="/pricing"/>
-      <Link title="Acerca de" link="/about"/>
-      <Link title="Nuestros Clientes" link="/case-studies"/>
-      <Link title="FAQ's" link="/faq"/>
+      <Link title="Servicios" link="/" />
+      <Link title="Nosotros" link="/about" />
+      <Link title="FAQ" link="/about" />
     </nav>
+    <div class="buttons flex gap-2">
+      <Button>
+        <Arrow slot="icon-right" />
+        ¡Últimos Proyectos!
+      </Button>
+      <Button type="secondary">
+        <Arrow slot="icon-left" />
+        ¡Contáctanos!
+      </Button>
+    </div>
   </div>
 </header>
