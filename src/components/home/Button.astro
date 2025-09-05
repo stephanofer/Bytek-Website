@@ -44,4 +44,21 @@ const typeClasses = {
     "hover:bg-black",
     "hover:text-white",
   ],
-}
+  secondary: [
+    "text-white",
+    "bg-black", // you'll need to define this color in Tailwind config
+    "border-secondary",
+    "hover:bg-white",
+    "hover:text-black",
+    "hover:border-black",
+  ],
+} as const;
+
+const classes = [...baseClasses, ...typeClasses[type]];
+---
+
+<a {...props} target={target} rel={rel} role={role} class:list={classes}>
+  <slot name="icon-left" />
+  <span> <slot /> </span>
+  <slot name="icon-right" />
+</a>
