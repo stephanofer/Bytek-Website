@@ -1,6 +1,10 @@
 ---
 const { title, link } = Astro.props;
-console.log(title)
 ---
 
-<a href={link} class="font-primary font-[450] text-[#E5E7EB] hover:text-gray-500 border-b-transparent border-b-2 hover:border-b-gray-600  " >{title}</a>
+<a
+  href={link}
+  class="font-primary font-[450] text-[#60A5FA] hover:text-[#93C5FD] border-b-2 border-b-transparent hover:border-b-[#93C5FD] transition-colors duration-200"
+>
+  {title}
+</a>
