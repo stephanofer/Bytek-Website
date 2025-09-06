@@ -2,17 +2,18 @@
 import Link from "@/components/layout/Link.astro";
 import Button from "@/components/home/Button.astro";
 import Arrow from "@/assets/svg/Arrow.svg";
+import ChatBubble from "@/assets/svg/ChatBubble.svg";
 ---
 
 <header class="w-full bg-[#1E3A8A]">
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <div class="text-lg sm:text-2xl font-bold tracking-wide text-[#E5E7EB]">
       BYTEK
-    </div>
+    </a>
     <nav class="flex items-center space-x-2 sm:space-x-8">
-      <Link title="Servicios" link="/" />
+      <Link title="Servicios" link="/services" />
       <Link title="Nosotros" link="/about" />
-      <Link title="FAQ" link="/about" />
+      <Link title="FAQ" link="/faq" />
     </nav>
     <div class="buttons flex gap-2">
       <Button>
@@ -20,8 +21,8 @@ import Arrow from "@/assets/svg/Arrow.svg";
         ¡Últimos Proyectos!
       </Button>
       <Button type="secondary">
-        <Arrow slot="icon-left" />
-        ¡Contáctanos!
+        ¡Contáctanos Ahora!
+        <ChatBubble slot="icon-left" />
       </Button>
     </div>
   </div>

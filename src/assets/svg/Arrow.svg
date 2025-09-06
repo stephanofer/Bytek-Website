@@ -1,14 +1,1 @@
-<svg
-          class="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 8l4 4m0 0l-4 4m4-4H3"
-          ></path>
-        </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.343 17.657L17.657 6.343m0 0v8.485m0-8.485H9.172"/></svg>

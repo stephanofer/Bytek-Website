@@ -1,0 +1,63 @@
+---
+import ServiceCard from "@/components/home/ServiceCard.astro";
+---
+
+<div class="flex flex-col text-center mt-10 ">
+  <div class="font-primary font-[450] text-5xl">NUESTROS SERVICIOS </div>
+  <div class="flex mt-10 gap-5">
+    <ServiceCard>
+      <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
+        Desarrollo de <strong class="text-javascript font-[450]"
+          >Aplicaciones Web</strong
+        >
+      </h3>
+      <div slot="description" class="flex flex-col gap-y-4 opacity-90">
+        <p>Creamos soluciones web escalables y modernas:</p>
+        <ul class="flex flex-col gap-y-4 list-disc pl-5">
+          <li>
+            <strong class="font-bold">Frontend Avanzado</strong> con React, Vue.js, Angular y tecnologías modernas.
+          </li>
+          <li>
+            <strong class="font-bold">Backend Robusto</strong> con Node.js, Python, .NET y bases de datos optimizadas.
+          </li>
+        </ul>
+      </div>
+    </ServiceCard>
+    <ServiceCard>
+      <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
+        <strong class="text-javascript font-[450]"
+          >Aplicaciones Móviles</strong
+        > Nativas
+      </h3>
+      <div slot="description" class="flex flex-col gap-y-4 opacity-90">
+        <p>Desarrollamos apps para iOS y Android:</p>
+        <ul class="flex flex-col gap-y-4 list-disc pl-5">
+          <li>
+            <strong class="font-bold">Desarrollo Nativo</strong> para máximo rendimiento en iOS y Android.
+          </li>
+          <li>
+            <strong class="font-bold">Cross-Platform</strong> con React Native y Flutter para mayor eficiencia.
+          </li>
+        </ul>
+      </div>
+    </ServiceCard>
+    <ServiceCard>
+      <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
+        Consultoría en <strong class="text-javascript font-[450]"
+          >Arquitectura de Software</strong
+        >
+      </h3>
+      <div slot="description" class="flex flex-col gap-y-4 opacity-90">
+        <p>Optimizamos tu infraestructura tecnológica:</p>
+        <ul class="flex flex-col gap-y-4 list-disc pl-5">
+          <li>
+            <strong class="font-bold">Cloud Computing</strong> con AWS, Azure y Google Cloud para soluciones escalables.
+          </li>
+          <li>
+            <strong class="font-bold">Microservicios</strong> para una arquitectura ágil y eficiente.
+          </li>
+        </ul>
+      </div>
+    </ServiceCard>
+  </div>
+</div>

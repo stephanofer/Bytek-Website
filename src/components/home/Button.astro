@@ -4,8 +4,7 @@ interface Props {
   rel?: string;
   role?: "link" | "button";
   type?: "primary" | "secondary";
-  style?: string;
-  [key: string]: any;
+  class?: string;
 }
 
 const {
@@ -13,25 +12,24 @@ const {
   rel = "noopener noreferrer",
   role = "link",
   type = "primary",
-  style,
+  class: customClass = "",
   ...props
-} = Astro.props as Props;
+} = Astro.props;
 
 const baseClasses = [
-  "px-5", // padding-left/right: 1.25rem
-  "py-3", // padding-top/bottom: 0.75rem
-  "font-clash", // font-family: "Clash" (you'll need to configure this in Tailwind)
-  "font-normal", // font-weight: 450 (closest match)
-  "text-base", // font-size: var(--fs-base)
-  "border", // border-width: 1px, border-style: solid
+  "px-5", 
+  "py-3", 
+  "font-clash", 
+  "text-base", 
+  "border",
   "flex",
   "justify-center",
   "items-center",
-  "gap-2", // gap: 0.5rem
+  "gap-2", 
   "cursor-pointer",
-  "transition-all", // transition for color, background-color, border-color
+  "transition-all", 
   "duration-150",
-  "ease-out", // cubic-bezier(0.4, 0, 0.2, 1)
+  "ease-out", 
   "font-primary",
   "font-[450]",
 ];
@@ -46,7 +44,8 @@ const typeClasses = {
   ],
   secondary: [
     "text-white",
-    "bg-black", // you'll need to define this color in Tailwind config
+    "bg-black",
+    "border-black",
     "border-secondary",
     "hover:bg-white",
     "hover:text-black",
@@ -54,7 +53,7 @@ const typeClasses = {
   ],
 } as const;
 
-const classes = [...baseClasses, ...typeClasses[type]];
+const classes = [...baseClasses, ...typeClasses[type], customClass];
 ---
 
 <a {...props} target={target} rel={rel} role={role} class:list={classes}>
